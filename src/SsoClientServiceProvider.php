@@ -11,8 +11,6 @@ class SsoClientServiceProvider extends PackageServiceProvider
     {
         $package
             ->name('filament-sso-client')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigrations();
+            ->hasTranslations();
     }
 }
