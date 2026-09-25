@@ -18,6 +18,8 @@ Filament panel integration for [`jeffersongoncalves/laravel-sso-client`](https:/
 
 | Package Version | Filament Version |
 |-----------------|------------------|
+| [1.x](https://github.com/jeffersongoncalves/filament-sso-client/tree/1.x) | 3.x |
+| [2.x](https://github.com/jeffersongoncalves/filament-sso-client/tree/2.x) | 4.x |
 | [3.x](https://github.com/jeffersongoncalves/filament-sso-client/tree/3.x) | 5.x |
 
 Requires `laravel-sso-client` 1.1+ (federated logout).
