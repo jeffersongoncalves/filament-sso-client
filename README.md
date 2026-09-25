@@ -1,14 +1,14 @@
 <div class="filament-hidden">
 
-![Filament SSO Client](https://raw.githubusercontent.com/jeffersongoncalves/filament-sso-client/3.x/art/jeffersongoncalves-filament-sso-client.png)
+![Filament SSO Client](https://raw.githubusercontent.com/jeffersongoncalves/filament-sso-client/1.x/art/jeffersongoncalves-filament-sso-client.png)
 
 </div>
 
 # Filament SSO Client
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/jeffersongoncalves/filament-sso-client.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-sso-client)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-sso-client/tests.yml?branch=3.x&label=tests&style=flat-square)](https://github.com/jeffersongoncalves/filament-sso-client/actions?query=workflow%3ATests+branch%3A3.x)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-sso-client/pint.yml?branch=3.x&label=code%20style&style=flat-square)](https://github.com/jeffersongoncalves/filament-sso-client/actions?query=workflow%3Apint+branch%3A3.x)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-sso-client/tests.yml?branch=1.x&label=tests&style=flat-square)](https://github.com/jeffersongoncalves/filament-sso-client/actions?query=workflow%3ATests+branch%3A1.x)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-sso-client/pint.yml?branch=1.x&label=code%20style&style=flat-square)](https://github.com/jeffersongoncalves/filament-sso-client/actions?query=workflow%3Apint+branch%3A1.x)
 [![Total Downloads](https://img.shields.io/packagist/dt/jeffersongoncalves/filament-sso-client.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-sso-client)
 [![License](https://img.shields.io/packagist/l/jeffersongoncalves/filament-sso-client.svg?style=flat-square)](LICENSE.md)
 
@@ -18,6 +18,8 @@ Filament panel integration for [`jeffersongoncalves/laravel-sso-client`](https:/
 
 | Package Version | Filament Version |
 |-----------------|------------------|
+| [1.x](https://github.com/jeffersongoncalves/filament-sso-client/tree/1.x) | 3.x |
+| [2.x](https://github.com/jeffersongoncalves/filament-sso-client/tree/2.x) | 4.x |
 | [3.x](https://github.com/jeffersongoncalves/filament-sso-client/tree/3.x) | 5.x |
 
 Requires `laravel-sso-client` 1.1+ (federated logout).

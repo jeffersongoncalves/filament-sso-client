@@ -2,7 +2,7 @@ name: Fix PHP code styling
 
 on:
   push:
-    branches: [3.x, main]
+    branches: [1.x, 2.x, 3.x]
 
 permissions:
   contents: write

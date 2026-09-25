@@ -8,7 +8,7 @@ use JeffersonGoncalves\SsoClient\Services\SsoClientManager;
 use Livewire\Livewire;
 
 beforeEach(function (): void {
-    Filament::setCurrentPanel('admin');
+    Filament::setCurrentPanel(Filament::getPanel('admin'));
 });
 
 function user(): User

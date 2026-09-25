@@ -3,16 +3,15 @@
 namespace JeffersonGoncalves\Filament\SsoClient\Pages\Auth;
 
 use Filament\Actions\Action;
-use Filament\Auth\Http\Responses\Contracts\LoginResponse;
-use Filament\Auth\Pages\Login;
 use Filament\Facades\Filament;
-use Filament\Schemas\Components\Actions;
-use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
+use Filament\Http\Responses\Auth\Contracts\LoginResponse;
+use Filament\Pages\Auth\Login;
 use JeffersonGoncalves\Filament\SsoClient\SsoClientPlugin;
 
 class SsoLogin extends Login
 {
+    protected static string $view = 'filament-sso-client::pages.auth.login';
+
     public function mount(): void
     {
         // The guest was stored as "url.intended" by Filament; the SSO callback returns there.
@@ -28,26 +27,20 @@ class SsoLogin extends Login
     public function authenticate(): ?LoginResponse
     {
         // The form is hidden, so local credentials must not be accepted either.
-        abort_unless(SsoClientPlugin::get()->hasLoginForm(), 403);
+        abort_unless($this->hasLoginForm(), 403);
 
         return parent::authenticate();
     }
 
-    public function content(Schema $schema): Schema
+    public function hasLoginForm(): bool
     {
-        if (SsoClientPlugin::get()->hasLoginForm()) {
-            return parent::content($schema);
-        }
-
-        return $schema->components([
-            Actions::make([$this->getSsoAction()])->fullWidth(),
-        ]);
+        return SsoClientPlugin::get()->hasLoginForm();
     }
 
     protected function getFormActions(): array
     {
         return [
-            ...parent::getFormActions(),
+            ...($this->hasLoginForm() ? parent::getFormActions() : []),
             $this->getSsoAction(),
         ];
     }
@@ -56,7 +49,7 @@ class SsoLogin extends Login
     {
         return Action::make('sso')
             ->label(SsoClientPlugin::get()->getButtonLabel())
-            ->icon(Heroicon::ArrowRightEndOnRectangle)
+            ->icon('heroicon-m-arrow-right-end-on-rectangle')
             ->color('gray')
             ->url(route('sso-client.redirect'));
     }

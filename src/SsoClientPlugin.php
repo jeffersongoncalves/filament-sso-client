@@ -3,8 +3,8 @@
 namespace JeffersonGoncalves\Filament\SsoClient;
 
 use Closure;
-use Filament\Actions\Action;
 use Filament\Contracts\Plugin;
+use Filament\Navigation\MenuItem;
 use Filament\Panel;
 use Filament\Support\Concerns\EvaluatesClosures;
 use JeffersonGoncalves\Filament\SsoClient\Http\Middleware\EndRevokedSsoSession;
@@ -33,7 +33,8 @@ class SsoClientPlugin implements Plugin
             // signed-in users are checked against Single Logout on every request.
             ->authMiddleware([EndRevokedSsoSession::class], isPersistent: true)
             ->userMenuItems([
-                'logout' => fn (Action $action): Action => $action->url(route('sso-client.logout')),
+                // The user menu posts the logout form to this URL (with CSRF).
+                'logout' => MenuItem::make()->url(fn (): string => route('sso-client.logout')),
             ]);
     }
 
